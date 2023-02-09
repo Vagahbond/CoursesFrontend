@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Breadcrumbs from "../misc/Breadcrumbs";
 import Loader from "../misc/Loader";
+import TagBadge from "../TagBadge";
 import { IChapter } from "../types/Chapter";
 
 const Chapters = () => {
@@ -45,8 +46,15 @@ const Chapters = () => {
                                     <div className="flex flex-row mx-auto my-4" key={chapter.title}>
                                         <Link
                                             to={`/chapters/${reposName}/${chapter.path}`}
-                                            className="text-xl text-white align-middle p-4 cursor-pointer hover:bg-zinc-600 rounded-xl">
+                                            className="text-xl text-white align-middle p-4 cursor-pointer hover:bg-zinc-600 rounded-xl flex flex-col">
                                             {chapter.title}
+                                            <div>
+                                                {
+                                                    chapter.tags.map((tag) =>
+                                                        <TagBadge tag={tag} key={tag} />
+                                                    )
+                                                }
+                                            </div>
                                         </Link>
                                     </div>
                                 )

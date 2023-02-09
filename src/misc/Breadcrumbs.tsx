@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface Breadcrumbpart {
     path?: string;
@@ -13,7 +13,7 @@ interface Props {
 const Breadcrumbs = ({ parts }: Props) => {
 
     return (
-        <ol className="flex list-reset bg-zinc-800 mx-24 my-6 rounded-xl drop-shadow-xl text-white h-min p-4">
+        <ol className="flex list-reset bg-zinc-800 mx-24 my-6 rounded-xl drop-shadow-xl text-white h-min p-4 shadow-xl">
             <li>
                 <span className="text-gray-500 mx-2"> / </span>
             </li>
@@ -41,9 +41,6 @@ const Breadcrumbs = ({ parts }: Props) => {
                     }
                 })
             }
-            {/* <li><Link to="#" className="text-white hover:bg-zinc-600 p-2 rounded-xl my-auto">Home</Link></li>
-            <li><span className="text-gray-500 mx-2">/</span></li>
-            <li className="text-gray-500">Library</li> */}
         </ol>
     )
 };
